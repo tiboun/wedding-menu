@@ -2,18 +2,58 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes  }   from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
+import { InfoComponent } from './info/info.component';
+import { CouponComponent } from './coupon/coupon.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,
+    HomeComponent,
+    InfoComponent,
+    CouponComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path:'menu',
+        component: MenuComponent
+      },
+      {
+        path:'info',
+        component: InfoComponent
+      },
+      {
+        path:'questions',
+        component: QuestionsComponent
+      },
+      {
+        path:'coupon',
+        component: CouponComponent
+      },
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      }
+    ])
+
   ],
+  exports: [ RouterModule ],
   providers: [],
   bootstrap: [AppComponent]
 })
