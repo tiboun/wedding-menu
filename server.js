@@ -6,9 +6,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 // Connect to the mongoose database
-mongoose.connect('mongodb://192.168.1.19:27017/local');
+mongoose.connect('mongodb://127.0.0.1:27017/local');
 
-// Get our API routes
+// Get our API routesP
 const api = require('./server/routes/api');
 
 const app = express();
