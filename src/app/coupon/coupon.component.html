@@ -1,4 +1,54 @@
 <h1>Coupon-réponse</h1>
 
-<p>Vous pouvez répondre au coupon-réponse via le formulaire ci-dessous.</p>
+<p>Vous pouvez répondre au coupon-réponse via le formulaire ci-dessous avant le 31 mars 2017.</p>
 
+<div *ngIf="coupon">
+    coupon : {{ coupon | json }}
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="nom" class="col-sm-2 control-label">Je suis</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="coupon.nom" name="nom" class="form-control" id="nom" placeholder="Nom">
+        </div>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="coupon.prenom" name="prenom" class="form-control" id="prenom" placeholder="Prénom">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="present" class="col-sm-2 control-label">Je serais présent(e)</label>
+        <div class="col-sm-5">
+            <label class="radio-inline">
+                <input type="radio" [(ngModel)]="coupon.present" name="present" id="present" value=true>Au dîner
+            </label>
+            <label class="radio-inline">
+                <input type="radio" [(ngModel)]="coupon.present" name="present" id="present" value=false>Par la pensée
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nom_accompagnateur" class="col-sm-2 control-label">Avec</label>
+        <div class="col-sm-5">
+            <label class="radio-inline">
+                <input type="radio" [(ngModel)]="accompagnateur" name="accompagnateur" id="accompagnateur" value=false>Moi-même
+            </label>
+            <label class="radio-inline">
+                <input type="radio" [(ngModel)]="accompagnateur" name="accompagnateur" id="accompagnateur" value=true>Mon(ma) chéri(e)
+            </label>
+        </div>
+        accompagnateur : {{ accompagnateur }}
+        <div class="col-sm-5" *ngIf="accompagnateur">
+            <input type="text" [(ngModel)]="coupon.nom_accompagnateur" name="nom_accompagnateur" class="form-control" id="nom_accompagnateur" placeholder="Nom">
+        </div>
+        <div class="col-sm-5" *ngIf="accompagnateur">
+            <input type="text" [(ngModel)]="coupon.prenom_accompagnateur" name="prenom_accompagnateur" class="form-control" id="prenom_accompagnateur" placeholder="Prénom">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Sign in</button>
+        </div>
+    </div>
+</form>
+</div>
