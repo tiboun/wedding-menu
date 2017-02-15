@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 // Connect to the mongoose database
 mongoose.connect('mongodb://localhost:27017/local');
 
-// Get our API routes
+// Get our API routesP
 const api = require('./server/routes/api');
 
 const app = express();
