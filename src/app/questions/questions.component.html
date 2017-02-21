@@ -1,1 +1,43 @@
-{{title}}
+<h1>Sondage</h1>
+
+<p>
+    Voici quelques questions pour nous aider à la préparation du mariage.
+    Les réponses sont à donner dans le contexte du repas du mariage.
+</p>
+
+<form class="form-horizontal" (ngSubmit)="onSubmit()" #appCoupon="ngForm">
+    <div class="form-group">
+        <label for="boisson" class="col-sm-2 control-label">Je préfère boire</label>
+        <div class="col-sm-10">
+            <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="vin_rouge" required>Du vin rouge
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="vin_blanc" required>Du vin blanc
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="eau_plate" required>De l'eau plate
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="eau_gazeuse" required>Du l'eau gazeuse
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="coca" required>Du coca / pepsi
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="jus_fruit" required>Des jus de fruit
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="fromage" class="col-sm-2 control-label">Je pense manger du fromage</label>
+        <div class="col-sm-10">
+            <label class="radio-inline">
+                <input type="radio" [(ngModel)]="sondage.fromage" name="fromage" id="fromage" value=true required>Oui
+            </label>
+            <label class="radio-inline">
+                <input type="radio" [(ngModel)]="sondage.fromage" name="fromage" id="fromage" value=false required>Non
+            </label>
+        </div>
+    </div>
+</form>

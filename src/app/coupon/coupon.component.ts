@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 
-import { Coupon }                from '../coupon';
-import { CouponService }         from './coupon.service';
+import { Coupon }                from './coupon';
+import { CouponService }         from '../coupon.service';
+import { Configuration } from '../configuration';
 
 @Component({
   selector: 'app-coupon',
   templateUrl: './coupon.component.html',
   styleUrls: ['./coupon.component.css'],
-  providers: [CouponService]
+  providers: [CouponService, Configuration]
 })
 export class CouponComponent {
   coupon: Coupon;
   entree: String;
   plat: String;
 
-  constructor(private couponService: CouponService) {
+  constructor(private _couponService:CouponService) {
     this.coupon = new Coupon()
   }
 
@@ -28,6 +29,10 @@ export class CouponComponent {
     this.coupon.lasagnes = (this.plat === "lasagnes");
     this.coupon.pizza = (this.plat === "pizza");
 
-    this.couponService.insert(this.coupon);
+    this._couponService
+     .insert(this.coupon)
+     .subscribe((data:Coupon) => console.log(data),
+                 error => console.log(error),
+                 () => console.log('Insert item'));
   }
 }
