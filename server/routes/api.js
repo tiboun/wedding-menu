@@ -1,6 +1,7 @@
 const express = require('express');
 const Coupon = require('../models/coupon');
 const FormPresence = require('../models/form-presence');
+const Questions = require('../models/questions');
 const router = express.Router();
 
 const axios = require('axios');
@@ -12,10 +13,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/coupon/save', (req, res) => {
-  // Get posts from the mock api
-  // This should ideally be replaced with a service that connects to MongoDB
-  console.log(req.body);
-
   var coupon = new Coupon(req.body);
   coupon.save(function(err) {
     if (err) {
@@ -37,10 +34,6 @@ router.get('/coupon/getall', (req, res) => {
 })
 
 router.post('/form-presence/save', (req, res) => {
-  // Get posts from the mock api
-  // This should ideally be replaced with a service that connects to MongoDB
-  console.log(req.body);
-
   var form = new FormPresence(req.body);
   form.save(function(err) {
     if (err) {
@@ -53,6 +46,27 @@ router.post('/form-presence/save', (req, res) => {
 
 router.get('/form-presence/getall', (req, res) => {
   FormPresence.find({}, function(err, forms) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(forms)
+    }
+  });
+})
+
+router.post('/questions/save', (req, res) => {
+  var form = new Questions(req.body);
+  form.save(function(err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(form);
+    }
+  });
+});
+
+router.get('/questions/getall', (req, res) => {
+  Questions.find({}, function(err, forms) {
     if (err) {
       res.status(500).send(err);
     } else {

@@ -1,31 +1,31 @@
-<h1>Sondage</h1>
+<h1>questions</h1>
 
 <p>
     Voici quelques questions pour nous aider à la préparation du mariage.
     Les réponses sont à donner dans le contexte du repas du mariage.
 </p>
 
-<form class="form-horizontal" (ngSubmit)="onSubmit()" #appCoupon="ngForm">
+<form class="form-horizontal" (ngSubmit)="onSubmit()" #appQuestions="ngForm">
     <div class="form-group">
-        <label for="boisson" class="col-sm-2 control-label">Je préfère boire</label>
+        <label class="col-sm-2 control-label">Je préfère boire</label>
         <div class="col-sm-10">
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="vin_rouge" required>Du vin rouge
+                <input type="checkbox" [(ngModel)]="questions.vin_rouge" name="vin_rouge" id="vin_rouge" value=true >Du vin rouge
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="vin_blanc" required>Du vin blanc
+                <input type="checkbox" [(ngModel)]="questions.vin_blanc" name="vin_blanc" id="vin_blanc" value=true >Du vin blanc
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="eau_plate" required>De l'eau plate
+                <input type="checkbox" [(ngModel)]="questions.eau_plate" name="eau_plate" id="eau_plate" value=true >De l'eau plate
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="eau_gazeuse" required>Du l'eau gazeuse
+                <input type="checkbox" [(ngModel)]="questions.eau_gazeuse" name="eau_gazeuse" id="eau_gazeuse" value=true>Du l'eau gazeuse
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="coca" required>Du coca / pepsi
+                <input type="checkbox" [(ngModel)]="questions.coca" name="coca" id="coca" value=true>Du coca / pepsi
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="sondage.boisson" name="boisson" id="boisson" value="jus_fruit" required>Des jus de fruit
+                <input type="checkbox" [(ngModel)]="questions.jus_fruit" name="jus_fruit" id="jus_fruit" value=true>Du jus de fruit
             </label>
         </div>
     </div>
@@ -33,11 +33,43 @@
         <label for="fromage" class="col-sm-2 control-label">Je pense manger du fromage</label>
         <div class="col-sm-10">
             <label class="radio-inline">
-                <input type="radio" [(ngModel)]="sondage.fromage" name="fromage" id="fromage" value=true required>Oui
+                <input type="radio" [(ngModel)]="questions.fromage" name="fromage" id="fromage" value=true required>Oui
             </label>
             <label class="radio-inline">
-                <input type="radio" [(ngModel)]="sondage.fromage" name="fromage" id="fromage" value=false required>Non
+                <input type="radio" [(ngModel)]="questions.fromage" name="fromage" id="fromage" value=false required>Non
             </label>
         </div>
     </div>
+    <div class="form-group">
+        <label for="vehicule" class="col-sm-2 control-label">Je viens</label>
+        <div class="col-sm-10">
+            <label class="radio-inline">
+                <input type="radio" [(ngModel)]="questions.vehicule" name="vehicule" id="vehicule" value=false>En transport en commun
+            </label>
+            <label class="radio-inline">
+                <input type="radio" [(ngModel)]="questions.vehicule" name="vehicule" id="vehicule" value=true>En voiture
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="vehicule_nb_place" class="col-sm-2 control-label">Je veux bien faire du covoiturage, j'ai </label>
+        <div class="col-sm-10">
+            <select [(ngModel)]="questions.vehicule_nb_place" name="vehicule_nb_place" id="vehicule_nb_place">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+        <span>place(s)</span>
+    </div>
+    <div class="form-group">
+        <input type="text" [(ngModel)]="questions.covoiturage_nom_prenom" name="covoiturage_nom_prenom" placeholder="Nom prénom">
+        <input type="text" [(ngModel)]="questions.covoiturage_coordonnees" name="covoiturage_coordonnees" placeholder="Coordonnées">
+    </div>
+
+    <button type="submit" class="btn btn-default">Envoyer</button>
 </form>
