@@ -1,3 +1,57 @@
 .contenu {
     text-align: center;
+    color: white;
+
+    font-family: cursive;
+
+    width: 50%;
+    margin: auto;
+    background-image: url("/images/ardoise.png");
+    
+	background-repeat: no-repeat;
+	background-position: center top;
+    background-size: 100% 100%;
+
+    padding: 80px 90px;
+    margin-bottom: 50px;
+}
+
+@media(max-width: 750px) {
+    .contenu {
+        width: 100%;
+        padding: 80px 5px;
+        background-size: cover;
+    }
+}
+
+@media(max-width: 1440px) {
+    .contenu {
+        width: 80%;
+    }
+}
+
+.contenu p {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.section {
+	position: relative;
+}
+.section:not(:last-child)::after {
+	content: "";
+	display: block;
+	margin: auto;
+
+	height: 50px;
+	width: 250px;
+
+	background-image: url("/images/separateur-blanc.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.section:not(:first-child) {
+    padding-top: 20px;
 }
