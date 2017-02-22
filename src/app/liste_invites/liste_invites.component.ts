@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./liste_invites.component.css']
 })
 export class ListeInvitesComponent {
+
 }
