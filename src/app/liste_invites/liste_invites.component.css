@@ -1,3 +1,11 @@
 .content {
     text-align: center;
 }
+
+.invite {
+    height: 110px
+}
+
+.photo-invite {
+    max-height: 85px
+}
