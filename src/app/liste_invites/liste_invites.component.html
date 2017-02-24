@@ -3,11 +3,11 @@
     
 
     <div class="row">
-        <div class="col-xs-12" id="imgRender">
+        <div class="col-xs-12 text-center" id="imgRender">
             <h1>
                 Liste des invités
             </h1>
-            <img src="/images/silouhette.png" />
+            <img src="/images/silouhette.png"/>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-xs-1 invite" *ngFor="let invite of getInvites(); let i = index">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 text-center">
                             <img src="{{invite.image}}" id="{{i}}" class="photo-invite" on-mouseenter='over($event, invite)' on-mouseleave='leave($event, invite)'>
                             <span>{{invite.nom}}</span>
                         </div>

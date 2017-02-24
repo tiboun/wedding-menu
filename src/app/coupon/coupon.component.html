@@ -1,73 +1,75 @@
-<h1 class="text-center">Coupon-réponse</h1>
+<div class="content">
+    <h1 class="text-center">Coupon-réponse</h1>
 
-<p class="text-center">Vous pouvez répondre au coupon-réponse via le formulaire ci-dessous avant le 31 mars 2017.</p>
+    <p class="text-center">Vous pouvez répondre au coupon-réponse via le formulaire ci-dessous avant le 31 mars 2017.</p>
 
-<div *ngIf="coupon">
+    <div *ngIf="coupon">
 
-<div class="alert alert-success" role="alert" *ngIf="formOk">Super, les informations ont été enregistrées, merci ! :)</div>
-<div class="alert alert-danger" role="alert" *ngIf="formError">Oh oh, ça n'a pas fonctionné ! Contactez-nous</div>
+    <div class="alert alert-success" role="alert" *ngIf="formOk">Super, les informations ont été enregistrées, merci ! :)</div>
+    <div class="alert alert-danger" role="alert" *ngIf="formError">Oh oh, ça n'a pas fonctionné ! Contactez-nous</div>
 
-<form class="form-horizontal col-xs-offset-2 col-xs-8" (ngSubmit)="onSubmit()" #appCoupon="ngForm">
-    <div class="form-group">
-        <label for="nom" class="col-xs-3 control-label">Je suis</label>
-        <div class="col-xs-3">
-            <input type="text" [(ngModel)]="coupon.nom" name="nom" class="form-control" id="nom" placeholder="Nom" required>
+    <form class="form-horizontal col-xs-offset-2 col-xs-8" (ngSubmit)="onSubmit()" #appCoupon="ngForm">
+        <div class="form-group">
+            <label for="nom" class="col-xs-3 control-label">Je suis</label>
+            <div class="col-xs-3">
+                <input type="text" [(ngModel)]="coupon.nom" name="nom" class="form-control" id="nom" placeholder="Nom" required>
+            </div>
+            <div class="col-xs-3">
+                <input type="text" [(ngModel)]="coupon.prenom" name="prenom" class="form-control" id="prenom" placeholder="Prénom" required>
+            </div>
         </div>
-        <div class="col-xs-3">
-            <input type="text" [(ngModel)]="coupon.prenom" name="prenom" class="form-control" id="prenom" placeholder="Prénom" required>
+        <div class="form-group">
+            <label for="entree" class="col-xs-3 control-label">En entrée, je prends</label>
+            <div class="col-xs-9">
+                <label class="radio-inline">
+                    <input type="radio" [(ngModel)]="entree" name="entree" id="entree" value="magret">Tarte Fine aux Magret Fumé et Coulis d’Orange
+                </label>
+            </div>
+            <div class="col-xs-offset-3 col-xs-9">
+                <label class="radio-inline">
+                    <input type="radio" [(ngModel)]="entree" name="entree" id="entree" value="saumon">Tartare aux Deux Saumons, Fromage Frais et Aubergines Grillées
+                </label>
+            </div>
+            <div class="col-xs-offset-3 col-xs-9">
+                <label class="radio-inline">
+                    <input type="radio" [(ngModel)]="entree" name="entree" id="entree" value="legumes">Tatin de Légumes et sa Tapenade
+                </label>
+            </div>
         </div>
+        <div class="form-group">
+            <label for="plat" class="col-xs-3 control-label">En plat principal, je prends</label>
+            <div class="col-xs-9">
+                <label class="radio-inline">
+                    <input type="radio" [(ngModel)]="plat" name="plat" id="plat" value="pintade" required>Suprême de Pintade à la Crème d’Écrevisses, <br> Pomme de Terre Grenailles au Thym et Ros’Anna de Carottes
+                </label>
+            </div>
+            <div class="col-xs-offset-3 col-xs-9">
+                <label class="radio-inline">
+                    <input type="radio" [(ngModel)]="plat" name="plat" id="plat" value="boeuf" required>Filet de Bœuf au Jus de Truffe et Foie Gras, <br> Gratin Dauphinois et Panais Confit au Beurre
+                </label>
+            </div>
+            <div class="col-xs-9 col-xs-offset-3">
+                <label class="radio-inline">
+                    <input type="radio" [(ngModel)]="plat" name="plat" id="plat" value="lasagnes" required>Lasagnes de Légumes au Pesto
+                </label>
+            </div>
+            <div class="col-xs-9 col-xs-offset-3">
+                <label class="radio-inline">
+                    <input type="radio" [(ngModel)]="plat" name="plat" id="plat" value="pizza" required>Pizza reine (pour les enfants)
+                </label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-10">
+                <button type="button" onclick="reset()" class="btn btn-default col-xs-2">Réinitialiser</button>
+                <button type="submit" class="btn btn-danger col-xs-offset-5 col-xs-2">Envoyer</button>
+            </div>
+        </div>
+    </form>
     </div>
-    <div class="form-group">
-        <label for="entree" class="col-xs-3 control-label">En entrée, je prends</label>
-        <div class="col-xs-9">
-            <label class="radio-inline">
-                <input type="radio" [(ngModel)]="entree" name="entree" id="entree" value="magret">Tarte Fine aux Magret Fumé et Coulis d’Orange
-            </label>
-        </div>
-        <div class="col-xs-offset-3 col-xs-9">
-            <label class="radio-inline">
-                <input type="radio" [(ngModel)]="entree" name="entree" id="entree" value="saumon">Tartare aux Deux Saumons, Fromage Frais et Aubergines Grillées
-            </label>
-        </div>
-        <div class="col-xs-offset-3 col-xs-9">
-            <label class="radio-inline">
-                <input type="radio" [(ngModel)]="entree" name="entree" id="entree" value="legumes">Tatin de Légumes et sa Tapenade
-            </label>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="plat" class="col-xs-3 control-label">En plat principal, je prends</label>
-        <div class="col-xs-9">
-            <label class="radio-inline">
-                <input type="radio" [(ngModel)]="plat" name="plat" id="plat" value="pintade" required>Suprême de Pintade à la Crème d’Écrevisses, <br> Pomme de Terre Grenailles au Thym et Ros’Anna de Carottes
-            </label>
-        </div>
-        <div class="col-xs-offset-3 col-xs-9">
-            <label class="radio-inline">
-                <input type="radio" [(ngModel)]="plat" name="plat" id="plat" value="boeuf" required>Filet de Bœuf au Jus de Truffe et Foie Gras, <br> Gratin Dauphinois et Panais Confit au Beurre
-            </label>
-        </div>
-        <div class="col-xs-9 col-xs-offset-3">
-            <label class="radio-inline">
-                <input type="radio" [(ngModel)]="plat" name="plat" id="plat" value="lasagnes" required>Lasagnes de Légumes au Pesto
-            </label>
-        </div>
-        <div class="col-xs-9 col-xs-offset-3">
-            <label class="radio-inline">
-                <input type="radio" [(ngModel)]="plat" name="plat" id="plat" value="pizza" required>Pizza reine (pour les enfants)
-            </label>
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <div class="col-xs-offset-3 col-xs-10">
-            <button type="button" onclick="reset()" class="btn btn-default col-xs-2">Réinitialiser</button>
-            <button type="submit" class="btn btn-danger col-xs-offset-5 col-xs-2">Envoyer</button>
-        </div>
-    </div>
-</form>
-</div>
 
-<div class="loader" *ngIf="waiting">
-    <img src="images/loader.gif" alt="loader" width="100px"/>
+    <div class="loader" *ngIf="waiting">
+        <img src="images/loader.gif" alt="loader" width="100px"/>
+    </div>
 </div>

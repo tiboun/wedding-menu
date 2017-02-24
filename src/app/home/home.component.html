@@ -1,17 +1,17 @@
 <div class="content">
-    
-    <h1>Accueil</h1>
+    <div class="text-center">
+        <h1>Accueil</h1>
 
-    <p>J - {{getJourRestant()}}</p>
-    
-    <p>Bienvenu(e) sur LE site de notre mariage !</p>
+        <p>J - {{getJourRestant()}}</p>
+        
+        <p>Bienvenu(e) sur LE site de notre mariage !</p>
 
-    <p>En vous baladant sur ce mini site, vous trouverez quelques informations sur le mariage. <br>
-        En espérant qu'elles vous seront utiles ;)
-    </p>
+        <p>En vous baladant sur ce mini site, vous trouverez quelques informations sur le mariage. <br>
+            En espérant qu'elles vous seront utiles ;)
+        </p>
 
-    <p>Bonne balade !</p>
-
+        <p>Bonne balade !</p>
+    <div>
     <div class="row">
         <img src="images/adrien_margaux.jpg" alt="nous" class="col-xs-offset-4 col-xs-4"/>
     </div>
@@ -35,7 +35,7 @@
                     <input type="radio" [(ngModel)]="form.present" name="present" id="present" value=false required>Absent
                 </label>
             </div>
-            <button type="submit" class="btn btn-default">Envoyer</button>
+            <button type="submit" class="btn btn-danger">Envoyer</button>
         </form>
     </div>
 </div>
