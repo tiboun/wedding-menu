@@ -1,18 +1,45 @@
 .content {
+    margin-top: 70px;
     text-align: center;
 }
 
 .invite {
-    height: 110px
+    height: 110px;
 }
 
 .photo-invite {
-    max-height: 85px
+    max-height: 85px;
+    max-width: 100%;
 }
 
 #imgRender {
-    display: none;
-    position: absolute;
+    position: fixed;
+    top: 60px;
+    height: 430px;
+    /*background-image: url("/images/cadre.png");*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: white;
+    z-index: 10;
 
-    border: 1px solid lightgrey;
+    box-shadow: grey 0px 5px 20px 0px;
+}
+
+    #imgRender img {
+        max-height: 340px;
+
+        -webkit-border-image: url(/images/cadre.png) 100 100 100 100 stretch stretch; /* Safari 3.1-5 */
+        -o-border-image: url(/images/cadre.png) 100 100 100 100 stretch stretch; /* Opera 11-12.1 */
+        -moz-border-image: url(/images/cadre.png) 100 100 100 100 stretch stretch;
+        border-image: url(/images/cadre.png) 100 100 100 100 stretch stretch;
+        border-style: inset;
+        border-width: 30px;
+    }
+
+#img-container {
+    margin-top: 450px;
+}
+
+.clearfix {
+    clear: both;
 }

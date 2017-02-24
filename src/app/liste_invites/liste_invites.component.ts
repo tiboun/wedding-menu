@@ -119,33 +119,12 @@ export class ListeInvitesComponent {
         
         if (img) {
             img.setAttribute("src", invite.image);
-
-            var hauteurDiff = $event.clientY + 10;
-            var largeurDiff = $event.clientX + 10;
-
-            var hauteur = hauteurDiff + img.height > window.innerHeight;
-            var largeur = largeurDiff + img.width > window.innerWidth;
-
-            if (largeur && hauteur) {
-                block.setAttribute("style", "display: block; bottom: " + (window.innerHeight - hauteurDiff) + "px; right: " + (window.innerWidth - largeurDiff) + "px");
-            }
-            else if (largeur && !hauteur) {
-                block.setAttribute("style", "display: block; top: " + hauteurDiff + "px; right: " + (window.innerWidth - largeurDiff) + "px");
-            }
-            else if (!largeur && hauteur) {
-                block.setAttribute("style", "display: block; bottom: " + (window.innerHeight - hauteurDiff) + "px; left: " + largeurDiff + "px");
-            }
-            else {
-                block.setAttribute("style", "display: block; top: " + hauteurDiff + "px; left: " + largeurDiff + "px");
-            }
         }
-
         
     }
 
     leave($event) {
         var block = document.getElementById("imgRender");
 
-        block.setAttribute("style", "");
     }
 }
