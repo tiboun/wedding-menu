@@ -1,23 +1,25 @@
 <div class="content">
     
-    <h1>
-        Accueil
-    </h1>
+    <h1>Accueil</h1>
 
-    <p>
-        J - {{getJourRestant()}}
-    </p>
+    <p>J - {{getJourRestant()}}</p>
     
-    <p>
-        Bienvenu(e) sur LE site de notre mariage !
+    <p>Bienvenu(e) sur LE site de notre mariage !</p>
+
+    <p>En vous baladant sur ce mini site, vous trouverez quelques informations sur le mariage. <br>
+        Il y a également un sondage pour nous aider à l'organisation de cet événement !
     </p>
 
-    <p>
-        Bonne balade !
-    </p>
+    <p>Bonne balade !</p>
 
-    <div>
-        <form class="form-inline" (ngSubmit)="onSubmit()" #appHome="ngForm">
+    <div class="row">
+        <img src="images/adrien_margaux.jpg" alt="nous" class="col-xs-offset-4 col-xs-4"/>
+    </div>
+
+    <div class="row">
+        <form class="form-present col-xs-offset-2 col-xs-8 form-inline" (ngSubmit)="onSubmit()" #appHome="ngForm">
+            <h2>Confirmez votre présence</h2>
+            
             <div class="form-group">
                 <input type="text" [(ngModel)]="form.nom" name="nom" class="form-control" id="nom" placeholder="Nom" required>
                 <input type="text" [(ngModel)]="form.prenom" name="prenom" class="form-control" id="prenom" placeholder="Prénom" required>

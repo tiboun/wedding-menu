@@ -41,3 +41,5 @@ Thumbs.db
 server.js
 
 *.orig
+
+/src/images

@@ -17,8 +17,6 @@ export class HomeComponent {
     }
     
     onSubmit() {
-      console.log(this.form)
-
       this._formPresenceService
      .insert(this.form)
      .subscribe((data:Form) => console.log(data),
