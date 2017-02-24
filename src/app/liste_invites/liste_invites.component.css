@@ -9,3 +9,10 @@
 .photo-invite {
     max-height: 85px
 }
+
+#imgRender {
+    display: none;
+    position: absolute;
+
+    border: 1px solid lightgrey;
+}
