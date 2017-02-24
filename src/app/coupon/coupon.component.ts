@@ -14,12 +14,19 @@ export class CouponComponent {
   coupon: Coupon;
   entree: String;
   plat: String;
+  formOk: Boolean;
+  formError: Boolean;
+  waiting: Boolean;
 
   constructor(private _couponService:CouponService) {
     this.coupon = new Coupon()
+    this.formOk = false;
+    this.formError = false;
+    this.waiting = false;
   }
 
   onSubmit () {
+    this.waiting = true
     this.coupon.tarte_magret_fume = (this.entree === "magret");
     this.coupon.tartare_saumon = (this.entree === "saumon");
     this.coupon.tatin_legumes = (this.entree === "legumes");
@@ -32,7 +39,17 @@ export class CouponComponent {
     this._couponService
      .insert(this.coupon)
      .subscribe((data:Coupon) => console.log(data),
-                 error => console.log(error),
-                 () => console.log('Insert item'));
+                 error => {
+                   this.waiting = false; 
+                   this.formError = true
+                  },
+                 () => {
+                   this.waiting = false;
+                   this.formOk = true
+                 });
+  }
+
+  reset() {
+    this.coupon = new Coupon()
   }
 }

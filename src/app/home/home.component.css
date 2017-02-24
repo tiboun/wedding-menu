@@ -10,3 +10,9 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.loader {
+    position: fixed; /* or absolute */
+    top: 40%;
+    left: 45%;
+}

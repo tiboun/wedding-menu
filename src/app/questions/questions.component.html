@@ -1,37 +1,51 @@
-<h1>questions</h1>
+<h1 class="text-center">Questions</h1>
 
-<p>
+<p class="text-center">
     Voici quelques questions pour nous aider à la préparation du mariage.
     Les réponses sont à donner dans le contexte du repas du mariage.
 </p>
 
-<form class="form-horizontal" (ngSubmit)="onSubmit()" #appQuestions="ngForm">
+<div class="alert alert-success" role="alert" *ngIf="formOk">Super, les informations ont été enregistrées, merci ! :)</div>
+<div class="alert alert-danger" role="alert" *ngIf="formError">Oh oh, ça n'a pas fonctionné ! Contactez-nous</div>
+
+<form class="form-horizontal col-xs-offset-1 col-xs-10" (ngSubmit)="onSubmit()" #appQuestions="ngForm">
     <div class="form-group">
-        <label class="col-sm-2 control-label">Je préfère boire</label>
-        <div class="col-sm-10">
+        <label class="col-xs-3 control-label">Je préfère boire</label>
+        <div class="col-xs-3">
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="questions.vin_rouge" name="vin_rouge" id="vin_rouge" value=true >Du vin rouge
+                <input type="checkbox" [(ngModel)]="questions.vin_rouge" name="vin_rouge" id="vin_rouge" value=true>Du vin rouge
             </label>
+        </div>
+        <div class="col-xs-3">
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="questions.vin_blanc" name="vin_blanc" id="vin_blanc" value=true >Du vin blanc
+                <input type="checkbox" [(ngModel)]="questions.vin_blanc" name="vin_blanc" id="vin_blanc" value=true>Du vin blanc
             </label>
+        </div>
+        <div class="col-xs-3">
             <label class="checkbox-inline">
-                <input type="checkbox" [(ngModel)]="questions.eau_plate" name="eau_plate" id="eau_plate" value=true >De l'eau plate
+                <input type="checkbox" [(ngModel)]="questions.eau_plate" name="eau_plate" id="eau_plate" value=true>De l'eau plate
             </label>
+        </div>
+
+        <div class="col-xs-offset-3 col-xs-3">
             <label class="checkbox-inline">
                 <input type="checkbox" [(ngModel)]="questions.eau_gazeuse" name="eau_gazeuse" id="eau_gazeuse" value=true>Du l'eau gazeuse
             </label>
+        </div>
+        <div class="col-xs-3">
             <label class="checkbox-inline">
                 <input type="checkbox" [(ngModel)]="questions.coca" name="coca" id="coca" value=true>Du coca / pepsi
             </label>
+        </div>
+        <div class="col-xs-3">
             <label class="checkbox-inline">
                 <input type="checkbox" [(ngModel)]="questions.jus_fruit" name="jus_fruit" id="jus_fruit" value=true>Du jus de fruit
             </label>
         </div>
     </div>
     <div class="form-group">
-        <label for="fromage" class="col-sm-2 control-label">Je pense manger du fromage</label>
-        <div class="col-sm-10">
+        <label for="fromage" class="col-xs-3 control-label">Je pense manger du fromage</label>
+        <div class="col-xs-9">
             <label class="radio-inline">
                 <input type="radio" [(ngModel)]="questions.fromage" name="fromage" id="fromage" value=true required>Oui
             </label>
@@ -41,35 +55,21 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="vehicule" class="col-sm-2 control-label">Je viens</label>
-        <div class="col-sm-10">
+        <label for="vehicule" class="col-xs-3 control-label">Je viens</label>
+        <div class="col-xs-9">
             <label class="radio-inline">
-                <input type="radio" [(ngModel)]="questions.vehicule" name="vehicule" id="vehicule" value=false>En transport en commun
+                <input type="radio" [(ngModel)]="questions.vehicule" name="vehicule" id="vehicule" value=false required>En transport en commun
             </label>
             <label class="radio-inline">
-                <input type="radio" [(ngModel)]="questions.vehicule" name="vehicule" id="vehicule" value=true>En voiture
+                <input type="radio" [(ngModel)]="questions.vehicule" name="vehicule" id="vehicule" value=true required>En voiture
             </label>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="vehicule_nb_place" class="col-sm-2 control-label">Je veux bien faire du covoiturage, j'ai </label>
-        <div class="col-sm-10">
-            <select [(ngModel)]="questions.vehicule_nb_place" name="vehicule_nb_place" id="vehicule_nb_place">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-            </select>
-        </div>
-        <span>place(s)</span>
-    </div>
-    <div class="form-group">
-        <input type="text" [(ngModel)]="questions.covoiturage_nom_prenom" name="covoiturage_nom_prenom" placeholder="Nom prénom">
-        <input type="text" [(ngModel)]="questions.covoiturage_coordonnees" name="covoiturage_coordonnees" placeholder="Coordonnées">
     </div>
 
-    <button type="submit" class="btn btn-default">Envoyer</button>
+    <button type="button" onclick="reset()" class="btn btn-default col-xs-offset-3 col-xs-2">Réinitialiser</button>
+    <button type="submit" class="btn btn-danger col-xs-offset-3 col-xs-2">Envoyer</button>
 </form>
+
+<div class="loader" *ngIf="waiting">
+    <img src="images/loader.gif" alt="loader" width="100px"/>
+</div>

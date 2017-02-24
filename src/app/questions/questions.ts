@@ -7,7 +7,4 @@ export class Questions {
   coca: Boolean;
   fromage: Boolean;
   vehicule: Boolean;
-  vehicule_nb_place: number;
-  covoiturage_nom_prenom: String;
-  covoiturage_coordonnees: String;
 }

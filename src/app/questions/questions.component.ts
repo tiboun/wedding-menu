@@ -14,8 +14,11 @@ import { Configuration } from '../configuration';
 })
 export class QuestionsComponent {
   questions: Questions;
+  formOk: Boolean;
+  formError: Boolean;
+  waiting: Boolean;
 
-  constructor(private _questionsService: QuestionsService) {
+  create() {
     this.questions = new Questions()
     this.questions.coca = false;
     this.questions.eau_gazeuse = false;
@@ -26,11 +29,29 @@ export class QuestionsComponent {
     this.questions.jus_fruit = false;
   }
 
+  constructor(private _questionsService: QuestionsService) {
+    this.create();
+    this.formOk = false;
+    this.formError = false;
+    this.waiting = false;
+  }
+
   onSubmit() {
+    this.waiting = true;
     this._questionsService
      .insert(this.questions)
      .subscribe((data:Questions) => console.log(data),
-                 error => console.log(error),
-                 () => console.log('Insert item'));
+                 error => {
+                   this.waiting = false; 
+                   this.formError = true
+                  },
+                 () => {
+                   this.waiting = false;
+                   this.formOk = true
+                 });
+  }
+
+  reset() {
+    this.create();
   }
 }

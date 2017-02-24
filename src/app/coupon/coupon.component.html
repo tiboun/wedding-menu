@@ -1,8 +1,11 @@
-<h1 class="text-align-center">Coupon-réponse</h1>
+<h1 class="text-center">Coupon-réponse</h1>
 
-<p class="text-align-center">Vous pouvez répondre au coupon-réponse via le formulaire ci-dessous avant le 31 mars 2017.</p>
+<p class="text-center">Vous pouvez répondre au coupon-réponse via le formulaire ci-dessous avant le 31 mars 2017.</p>
 
 <div *ngIf="coupon">
+
+<div class="alert alert-success" role="alert" *ngIf="formOk">Super, les informations ont été enregistrées, merci ! :)</div>
+<div class="alert alert-danger" role="alert" *ngIf="formError">Oh oh, ça n'a pas fonctionné ! Contactez-nous</div>
 
 <form class="form-horizontal col-xs-offset-2 col-xs-8" (ngSubmit)="onSubmit()" #appCoupon="ngForm">
     <div class="form-group">
@@ -57,9 +60,14 @@
     </div>
     
     <div class="form-group">
-        <div class="col-xs-offset-5 col-xs-3">
-            <button type="submit" class="btn btn-default">Envoyer</button>
+        <div class="col-xs-offset-3 col-xs-10">
+            <button type="button" onclick="reset()" class="btn btn-default col-xs-2">Réinitialiser</button>
+            <button type="submit" class="btn btn-danger col-xs-offset-5 col-xs-2">Envoyer</button>
         </div>
     </div>
 </form>
+</div>
+
+<div class="loader" *ngIf="waiting">
+    <img src="images/loader.gif" alt="loader" width="100px"/>
 </div>

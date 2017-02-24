@@ -11,17 +11,30 @@ import { Configuration } from '../configuration';
 })
 export class HomeComponent {
     form: Form;
+    formOk: Boolean;
+    formError: Boolean;
+    waiting: Boolean;
 
     constructor(private _formPresenceService:FormPresenceService) {
       this.form = new Form();
+      this.formOk = false;
+      this.formError = false;
+      this.waiting = false;
     }
     
     onSubmit() {
+      this.waiting = true
       this._formPresenceService
      .insert(this.form)
      .subscribe((data:Form) => console.log(data),
-                 error => console.log(error),
-                 () => console.log('Insert item'));
+                 error => {
+                   this.waiting = false; 
+                   this.formError = true
+                  },
+                 () => {
+                   this.waiting = false;
+                   this.formOk = true
+                 });
     }
 
     getJourRestant () {
