@@ -33,6 +33,16 @@ router.get('/coupon/getall', (req, res) => {
   });
 })
 
+router.post('/coupon/delete', (req, res) => {
+  Coupon.remove({}, function(err, coupons) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send('ok')
+    }
+  });
+})
+
 router.post('/form-presence/save', (req, res) => {
   var form = new FormPresence(req.body);
   form.save(function(err) {
@@ -54,6 +64,16 @@ router.get('/form-presence/getall', (req, res) => {
   });
 })
 
+router.post('/form-presence/delete', (req, res) => {
+  FormPresence.remove({}, function(err, coupons) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send('ok')
+    }
+  });
+})
+
 router.post('/questions/save', (req, res) => {
   var form = new Questions(req.body);
   form.save(function(err) {
@@ -71,6 +91,16 @@ router.get('/questions/getall', (req, res) => {
       res.status(500).send(err);
     } else {
       res.status(200).send(forms)
+    }
+  });
+})
+
+router.post('/questions/delete', (req, res) => {
+  Questions.remove({}, function(err, coupons) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send('ok')
     }
   });
 })

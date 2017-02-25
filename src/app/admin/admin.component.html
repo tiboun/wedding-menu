@@ -1,0 +1,115 @@
+<div class="content">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#presence" aria-controls="presence" role="tab" data-toggle="tab">Présence</a></li>
+        <li role="presentation"><a href="#coupon" aria-controls="coupon" role="tab" data-toggle="tab">Coupon-réponse</a></li>
+        <li role="presentation"><a href="#sondage" aria-controls="sondage" role="tab" data-toggle="tab">Sondage</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active row" id="presence">
+            <div class="col-xs-6 col-xs-offset-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="row">
+                            <th class="col-xs-4 text-center">Nom</th>
+                            <th class="col-xs-4 text-center">Prénom</th>
+                            <th class="col-xs-4 text-center">Présent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let form of forms">
+                            <td>{{ form.nom }}</td>
+                            <td>{{ form.prenom }}</td>
+                            <td *ngIf="form.present" class="text-center">X</td>
+                            <td *ngIf="!form.present" class="text-center"></td>
+                        </tr>
+                    </tbody>        
+                </table>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane row" id="coupon">
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="row">
+                            <th class="col-xs-2 text-center">Nom</th>
+                            <th class="col-xs-2 text-center">Prénom</th>
+                            <th class="col-xs-1 text-center">Tarte magret fumé</th>
+                            <th class="col-xs-1 text-center">Tartare de saumons</th>
+                            <th class="col-xs-1 text-center">Tatin de légumes</th>
+                            <th class="col-xs-1 text-center">Pintade</th>
+                            <th class="col-xs-1 text-center">Boeuf</th>
+                            <th class="col-xs-1 text-center">Lasagnes</th>
+                            <th class="col-xs-1 text-center">Pizza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let coupon of coupons">
+                            <td>{{ coupon.nom }}</td>
+                            <td>{{ coupon.prenom }}</td>
+                            <td class="text-center" *ngIf="coupon.tarte_magret_fume">X</td>
+                            <td *ngIf="!coupon.tarte_magret_fume"></td>
+                            <td class="text-center" *ngIf="coupon.tartare_saumon">X</td>
+                            <td *ngIf="!coupon.tartare_saumon"></td>
+                            <td class="text-center" *ngIf="coupon.tatin_legumes">X</td>
+                            <td *ngIf="!coupon.tatin_legumes"></td>
+                            <td class="text-center" *ngIf="coupon.pintade">X</td>
+                            <td *ngIf="!coupon.pintade"></td>
+                            <td class="text-center" *ngIf="coupon.boeuf">X</td>
+                            <td *ngIf="!coupon.boeuf"></td>
+                            <td class="text-center" *ngIf="coupon.lasagnes">X</td>
+                            <td *ngIf="!coupon.lasagnes"></td>
+                            <td class="text-center" *ngIf="coupon.pizza">X</td>
+                            <td *ngIf="!coupon.pizza"></td>
+                        </tr>
+                    </tbody>        
+                </table>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane row" id="sondage">
+            <div class="col-xs-offset-1 col-xs-10">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="row">
+                            <th class="col-xs-1 text-center">Coca</th>
+                            <th class="col-xs-2 text-center">Eau gazeuse</th>
+                            <th class="col-xs-1 text-center">Vin blanc</th>
+                            <th class="col-xs-1 text-center">Vin rouge</th>
+                            <th class="col-xs-1 text-center">Eau plate</th>
+                            <th class="col-xs-1 text-center">Fromage</th>
+                            <th class="col-xs-2 text-center">Jus de fruit</th>
+                            <th class="col-xs-1 text-center">Voiture</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let question of questions">
+                            <td *ngIf="question.coca" class="text-center">X</td>
+                            <td *ngIf="!question.coca"></td>
+
+                            <td *ngIf="question.eau_gazeuse" class="text-center">X</td>
+                            <td *ngIf="!question.eau_gazeuse"></td>
+
+                            <td *ngIf="question.vin_blanc" class="text-center">X</td>
+                            <td *ngIf="!question.vin_blanc"></td>
+
+                            <td *ngIf="question.vin_rouge" class="text-center">X</td>
+                            <td *ngIf="!question.vin_rouge"></td>
+
+                            <td *ngIf="question.eau_plate" class="text-center">X</td>
+                            <td *ngIf="!question.eau_plate"></td>
+
+                            <td *ngIf="question.fromage" class="text-center">X</td>
+                            <td *ngIf="!question.fromage"></td>
+
+                            <td *ngIf="question.jus_fruit" class="text-center">X</td>
+                            <td *ngIf="!question.jus_fruit"></td>
+
+                            <td *ngIf="question.vehicule" class="text-center">X</td>
+                            <td *ngIf="!question.vehicule"></td>
+                        </tr>
+                    </tbody>        
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

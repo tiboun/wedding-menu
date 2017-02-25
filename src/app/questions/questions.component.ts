@@ -48,10 +48,7 @@ export class QuestionsComponent {
                  () => {
                    this.waiting = false;
                    this.formOk = true
+                   this.create();
                  });
-  }
-
-  reset() {
-    this.create();
   }
 }

@@ -27,6 +27,11 @@ export class CouponService {
           .map((response: Response) => <Coupon>response.json());
   }
 
+  getAll(): Observable<Coupon[]> {
+    return this._http.get(this.url + '/coupon/getall', null)
+        .map((response: Response) => <Coupon[]>response.json());
+  }
+
   private handleError(error: Response) {
       console.error(error);
       return Observable.throw(error.json().error || 'Server error');

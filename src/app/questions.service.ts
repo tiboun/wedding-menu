@@ -27,6 +27,11 @@ export class QuestionsService {
           .map((response: Response) => <Questions>response.json());
   }
 
+  getAll(): Observable<Questions[]> {
+    return this._http.get(this.url + '/questions/getall', null)
+        .map((response: Response) => <Questions[]>response.json());
+  }
+
   private handleError(error: Response) {
       console.error(error);
       return Observable.throw(error.json().error || 'Server error');

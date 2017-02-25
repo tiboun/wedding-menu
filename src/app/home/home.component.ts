@@ -34,6 +34,7 @@ export class HomeComponent {
                  () => {
                    this.waiting = false;
                    this.formOk = true
+                   this.form = new Form()
                  });
     }
 

@@ -45,7 +45,10 @@ export class CouponComponent {
                   },
                  () => {
                    this.waiting = false;
-                   this.formOk = true
+                   this.formOk = true;
+                   this.coupon = new Coupon()
+                   this.entree = ''
+                   this.plat = ''
                  });
   }
 

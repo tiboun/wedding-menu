@@ -27,6 +27,11 @@ export class FormPresenceService {
           .map((response: Response) => <Form>response.json());
   }
 
+  getAll(): Observable<Form[]> {
+    return this._http.get(this.url + '/form-presence/getall', null)
+        .map((response: Response) => <Form[]>response.json());
+  }
+
   private handleError(error: Response) {
       console.error(error);
       return Observable.throw(error.json().error || 'Server error');

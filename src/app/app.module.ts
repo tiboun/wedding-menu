@@ -13,6 +13,8 @@ import { QuestionsComponent } from './questions/questions.component';
 import { DinerComponent } from './diner/diner.component';
 import { ListeMariageComponent } from './liste_mariage/liste_mariage.component';
 import { ListeInvitesComponent } from './liste_invites/liste_invites.component';
+import { AdminComponent } from './admin/admin.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ListeInvitesComponent } from './liste_invites/liste_invites.component';
     QuestionsComponent,
     DinerComponent,
     ListeMariageComponent,
-    ListeInvitesComponent
+    ListeInvitesComponent,
+    AdminComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +66,14 @@ import { ListeInvitesComponent } from './liste_invites/liste_invites.component';
       {
         path:'liste_invites',
         component: ListeInvitesComponent
+      },
+      {
+        path:'admin',
+        component: AdminComponent
+      },
+      {
+        path:'contact',
+        component: ContactComponent
       },
       {
         path: '',
