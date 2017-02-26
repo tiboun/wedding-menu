@@ -1,29 +1,28 @@
 <div class="content">
-
-    
-
     <div class="row">
-        <div class="col-xs-12 text-center" id="imgRender">
-            <h1>
-                Liste des invités
-            </h1>
-            <img src="/images/silouhette.png"/>
-            <div class="clearfix"></div>
-        </div>
+        <h1 class="text-center">
+            Liste des invités
+        </h1>
     </div>
-    <div class="row" id="img-container">
-        <div class="col-xs-offset-1 col-xs-10">
-            <div class="row">
-                <div class="col-xs-1 invite" *ngFor="let invite of getInvites(); let i = index">
+    <div class="row" id="invite-zone">
+        <div class="col-xs-8">
+            <div class="row" id="img-container">
+                <div class="col-xs-offset-1 col-xs-11">
                     <div class="row">
-                        <div class="col-xs-12 text-center">
-                            <img src="{{invite.image}}" id="{{i}}" class="photo-invite" on-mouseenter='over($event, invite)' on-mouseleave='leave($event, invite)'>
-                            <span>{{invite.nom}}</span>
+                        <div class="col-xs-1 invite" *ngFor="let invite of getInvites(); let i = index">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <img src="{{invite.image}}" id="{{i}}" class="photo-invite" on-mouseenter='over($event, invite)' on-mouseleave='leave($event, invite)'>
+                                    <span>{{invite.nom}}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-xs-4" id="imgRender">
+            <img src="/images/silouhette.png" />
+        </div>
     </div>
-
 </div>
