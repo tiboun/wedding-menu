@@ -9,7 +9,7 @@
     <div class="alert alert-success" role="alert" *ngIf="formOk">Super, les informations ont été enregistrées, merci ! :)</div>
     <div class="alert alert-danger" role="alert" *ngIf="formError">Oh oh, ça n'a pas fonctionné ! Contactez-nous</div>
 
-    <form class="form-horizontal col-xs-offset-1 col-xs-10" (ngSubmit)="onSubmit()" #appQuestions="ngForm">
+    <form class="form-horizontal col-xs-offset-2 col-xs-8" (ngSubmit)="onSubmit()" #appQuestions="ngForm">
         <div class="form-group">
             <label class="col-xs-3 control-label">Je préfère boire</label>
             <div class="col-xs-3">
@@ -74,4 +74,5 @@
     <div class="loader" *ngIf="waiting">
         <img src="images/loader.gif" alt="loader" width="100px"/>
     </div>
+    <div class="clearfix"></div>
 </div>

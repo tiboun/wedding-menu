@@ -16,16 +16,13 @@
 }
 
 #imgRender {
-    /*position: fixed;*/
-    /*top: 60px;*/
     height: 100%;
-    /*background-image: url("/images/cadre.png");*/
+    position: fixed;
+    right: 0;
+    
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: white;
-    /*z-index: 10;*/
-
-    /*box-shadow: grey 0px 5px 20px 0px;*/
 }
 
     #imgRender img {
