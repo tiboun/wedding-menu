@@ -6,22 +6,26 @@
     height: 110px;
 }
 
+#invite-zone {
+    margin-top: 30px;
+}
+
 .photo-invite {
     max-height: 85px;
     max-width: 100%;
 }
 
 #imgRender {
-    position: fixed;
-    top: 60px;
-    height: 430px;
+    /*position: fixed;*/
+    /*top: 60px;*/
+    height: 100%;
     /*background-image: url("/images/cadre.png");*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: white;
-    z-index: 10;
+    /*z-index: 10;*/
 
-    box-shadow: grey 0px 5px 20px 0px;
+    /*box-shadow: grey 0px 5px 20px 0px;*/
 }
 
     #imgRender img {
@@ -33,10 +37,13 @@
         border-image: url(/images/cadre.png) 100 100 100 100 stretch stretch;
         border-style: inset;
         border-width: 30px;
+
+        margin: auto;
+        display: inherit;
     }
 
 #img-container {
-    margin-top: 450px;
+    /*margin-top: 450px;*/
 }
 
 .clearfix {
