@@ -46,4 +46,14 @@ export class HomeComponent {
       var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
       return diffDays
     }
+
+    imageEnter() {
+        var img = document.getElementById("imageHome").getElementsByTagName("img")[0];
+        img.src = "images/front.jpg";
+    }
+
+    imageLeave() {
+        var img = document.getElementById("imageHome").getElementsByTagName("img")[0];
+        img.src = "images/back.jpg";
+    }
 }
