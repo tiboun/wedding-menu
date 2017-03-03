@@ -32,6 +32,16 @@ export class FormPresenceService {
         .map((response: Response) => <Form[]>response.json());
   }
 
+  deleteAll(): Observable<String> {
+      return this._http.post(this.url + '/form-presence/deleteall', null)
+      .map((response: Response) => <String>response.json());
+  }
+
+  delete(id: String): Observable<String> {
+      return this._http.post(this.url + '/form-presence/delete', { id: id })
+          .map((response: Response) => <String>response.json());
+  }
+
   private handleError(error: Response) {
       console.error(error);
       return Observable.throw(error.json().error || 'Server error');

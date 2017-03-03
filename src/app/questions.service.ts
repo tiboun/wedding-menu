@@ -32,6 +32,16 @@ export class QuestionsService {
         .map((response: Response) => <Questions[]>response.json());
   }
 
+  deleteAll(): Observable<String> {
+      return this._http.post(this.url + '/questions/deleteall', null)
+      .map((response: Response) => <String>response.json());
+  }
+
+  delete(id: String): Observable<String> {
+      return this._http.post(this.url + '/questions/delete', { id: id })
+          .map((response: Response) => <String>response.json());
+  }
+
   private handleError(error: Response) {
       console.error(error);
       return Observable.throw(error.json().error || 'Server error');

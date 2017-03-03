@@ -33,7 +33,7 @@ router.get('/coupon/getall', (req, res) => {
   });
 })
 
-router.post('/coupon/delete', (req, res) => {
+router.post('/coupon/deleteall', (req, res) => {
   Coupon.remove({}, function(err, coupons) {
     if (err) {
       res.status(500).send(err);
@@ -41,6 +41,16 @@ router.post('/coupon/delete', (req, res) => {
       res.status(200).send('ok')
     }
   });
+})
+
+router.post('/coupon/delete', (req, res) => {
+  Coupon.remove({ _id: req.body.id }, function (err, coupon) {
+    if (err) {
+      res.status(500).send(err)
+    } else {
+      res.status(200).send({ ok: 'ok'})
+    }
+  })
 })
 
 router.post('/form-presence/save', (req, res) => {
@@ -64,14 +74,24 @@ router.get('/form-presence/getall', (req, res) => {
   });
 })
 
-router.post('/form-presence/delete', (req, res) => {
+router.post('/form-presence/deleteall', (req, res) => {
   FormPresence.remove({}, function(err, coupons) {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.status(200).send('ok')
+      res.status(200).send({ ok: 'ok'})
     }
   });
+})
+
+router.post('/form-presence/delete', (req, res) => {
+  FormPresence.remove({ _id: req.body.id }, function (err, form) {
+    if (err) {
+      res.status(500).send(err)
+    } else {
+      res.status(200).send({ ok: 'ok'})
+    }
+  })
 })
 
 router.post('/questions/save', (req, res) => {
@@ -95,14 +115,24 @@ router.get('/questions/getall', (req, res) => {
   });
 })
 
-router.post('/questions/delete', (req, res) => {
+router.post('/questions/deleteall', (req, res) => {
   Questions.remove({}, function(err, coupons) {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.status(200).send('ok')
+      res.status(200).send({ ok: 'ok'})
     }
   });
+})
+
+router.post('/questions/delete', (req, res) => {
+  Questions.remove({ _id: req.body.id }, function (err, question) {
+    if (err) {
+      res.status(500).send(err)
+    } else {
+      res.status(200).send({ ok: 'ok'})
+    }
+  })
 })
 
 module.exports = router;

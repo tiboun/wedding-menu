@@ -32,6 +32,16 @@ export class CouponService {
         .map((response: Response) => <Coupon[]>response.json());
   }
 
+  deleteAll(): Observable<String> {
+      return this._http.post(this.url + '/coupon/deleteall', null)
+      .map((response: Response) => <String>response.json());
+  }
+
+  delete(id: String): Observable<String> {
+      return this._http.post(this.url + '/coupon/delete', { id: id })
+          .map((response: Response) => <String>response.json());
+  }
+
   private handleError(error: Response) {
       console.error(error);
       return Observable.throw(error.json().error || 'Server error');

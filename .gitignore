@@ -43,4 +43,3 @@ server.js
 *.orig
 
 /src/images/photos
-src/images/*

@@ -48,6 +48,59 @@ export class AdminComponent implements OnInit {
       )
     }
 
+    deleteAll() {
+      this._couponService
+      .deleteAll()
+      .subscribe((data: String) => console.log(data),
+              error => console.log(error),
+              () => console.log("ok"))
+
+      this._formPresenceService
+      .deleteAll()
+      .subscribe((data: String) => console.log(data),
+              error => console.log(error),
+              () => console.log("ok"))
+
+      this._questionsService
+      .deleteAll()
+      .subscribe((data: String) => console.log(data),
+              error => console.log(error),
+              () => console.log("ok"))
+      
+      this.coupons.splice(0)
+      this.questions.splice(0)
+      this.forms.splice(0)
+    }
+
+    deleteCoupon(coupon) {
+      this._couponService
+      .delete(coupon._id)
+      .subscribe((data: String) => console.log(data),
+              error => console.log(error),
+              () => console.log("ok"))
+      let i = this.coupons.indexOf(coupon)
+      this.coupons.splice(i, 1)
+    }
+
+    deleteForm(form) {
+      this._formPresenceService
+      .delete(form._id)
+      .subscribe((data: String) => console.log(data),
+              error => console.log(error),
+              () => console.log("ok"))
+      let i = this.forms.indexOf(form)
+      this.forms.splice(i, 1)
+    }
+
+    deleteQuestion(question) {
+      this._questionsService
+      .delete(question._id)
+      .subscribe((data: String) => console.log(data),
+              error => console.log(error),
+              () => console.log("ok"))
+      let i = this.questions.indexOf(question)
+      this.questions.splice(i, 1)
+    }
     // onSubmit() {
     //   this.waiting = true
     //   this._formPresenceService

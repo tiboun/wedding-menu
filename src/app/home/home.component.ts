@@ -49,11 +49,11 @@ export class HomeComponent {
 
     imageEnter() {
         var img = document.getElementById("imageHome").getElementsByTagName("img")[0];
-        img.src = "images/front.jpg";
+        img.src = "images/photos/front.jpg";
     }
 
     imageLeave() {
         var img = document.getElementById("imageHome").getElementsByTagName("img")[0];
-        img.src = "images/back.jpg";
+        img.src = "images/photos/back.jpg";
     }
 }
