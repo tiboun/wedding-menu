@@ -68,7 +68,7 @@ import { ContactComponent } from './contact/contact.component';
         component: ListeInvitesComponent
       },
       {
-        path:'admin',
+        path:'admin_secret',
         component: AdminComponent
       },
       {
