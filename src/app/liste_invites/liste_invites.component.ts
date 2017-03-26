@@ -41,11 +41,11 @@ export class ListeInvitesComponent {
       { nom: "Jean-Baptiste & Yedda", image: 'images/photos/jb_c.jpg'},      
       { nom: "Stéphanie", image: 'images/photos/stephanie_benjamin.jpg'},
       { nom: "Rémi", image: 'images/photos/remi.jpg'},
+      { nom: "Bertrand & Alexandra", image: 'images/photos/bertrand_alex.jpg'},
       
       { nom: "Dominique", image: 'images/photos/dominique.jpg'},
       { nom: "Jacques", image: 'images/photos/jacques.jpg'},      
       { nom: "Eric", image: 'images/photos/eric.jpg'},
-      { nom: "Patrick", image: 'images/photos/patrick.jpg'},    
       { nom: "Sandrine", image: 'images/photos/sandrine.jpg'},
       { nom: "Maissa", image: 'images/photos/maissa.jpg'},
       { nom: "Catherine & Christian", image: 'images/photos/catherine_christian.jpg'},
@@ -54,8 +54,7 @@ export class ListeInvitesComponent {
       { nom: "Nicolas", image: 'images/photos/nicolas.jpg'},      
       { nom: "Louis", image: 'images/photos/louis.jpg'},
       { nom: "Clément", image: 'images/photos/clement_d.jpg'},
-      { nom: "Florent", image: 'images/photos/florent.jpg'},
-      { nom: "Bertrand & Alexandra", image: 'images/photos/bertrand_alex.jpg'},
+      { nom: "Florent", image: 'images/photos/florent.jpg'},      
       { nom: "Jean-Christophe", image: 'images/photos/jc.jpg'},
       { nom: "Yannis", image: 'images/photos/yannis.jpg'},
       { nom: "Simon", image: 'images/photos/simon.jpg'},      
@@ -91,6 +90,7 @@ export class ListeInvitesComponent {
       { nom: "Anne-Laure",  image: 'images/icone_fille.png'},
       { nom: "Mme Oliva",  image: 'images/icone_fille.png'},
       
+      { nom: "Patrick", image: 'images/photos/patrick.jpg'},    
       { nom: "Youcef", image: 'images/icone_garcon.png'},
       { nom: "Daisy", image: 'images/icone_fille.png'},
       { nom: "Guillaume", image: 'images/photos/icone_garcon.png'}
