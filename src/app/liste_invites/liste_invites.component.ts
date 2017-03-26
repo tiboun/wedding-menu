@@ -34,25 +34,23 @@ export class ListeInvitesComponent {
       { nom: "Aurore", image: 'images/photos/Aurore.png'},
       { nom: "Victor", image: 'images/photos/victor_c.jpg'},
       { nom: "Bastien", image: 'images/photos/bastien.jpg'},
-      
       { nom: "Karine & Bounkong", image: 'images/photos/boun_karine.jpg'},
+      { nom: "Gina & Pierre", image: 'images/photos/gina.jpg'},
+      { nom: "Benjamin & Adeline", image: 'images/photos/benj_adeline.jpg'},
+      { nom: "Jenani", image: 'images/photos/jenani.jpg'},      
+      
       { nom: "Dominique", image: 'images/photos/dominique.jpg'},
       { nom: "Jacques", image: 'images/photos/jacques.jpg'},
       { nom: "Stéphanie", image: 'images/photos/stephanie_benjamin.jpg'},
       { nom: "Eric", image: 'images/photos/eric.jpg'},
-      { nom: "Guillaume", image: 'images/photos/icone_garcon.png'},      
       { nom: "Patrick", image: 'images/photos/patrick.jpg'},    
-      { nom: "Daisy", image: 'images/icone_fille.png'},      
       { nom: "Sandrine", image: 'images/photos/sandrine.jpg'},
-      { nom: "Jenani", image: 'images/photos/jenani.jpg'},
-      { nom: "Gina & Pierre", image: 'images/photos/gina.jpg'},
       { nom: "Maissa", image: 'images/photos/maissa.jpg'},
       { nom: "Maly", image: 'images/photos/maly.jpg'},
       { nom: "Catherine & Christian", image: 'images/photos/catherine_christian.jpg'},
       { nom: "Céline & Jean-Baptiste", image: 'images/photos/celine_jb.jpg'},
       { nom: "Claire", image: 'images/photos/claire.jpg'},
       { nom: "Nicolas", image: 'images/photos/nicolas.jpg'},
-      { nom: "Benjamin & Adeline", image: 'images/photos/benj_adeline.jpg'},
       { nom: "Rémi", image: 'images/photos/remi.jpg'},
       { nom: "Louis", image: 'images/photos/louis.jpg'},
       { nom: "Clément", image: 'images/photos/clement_d.jpg'},
@@ -85,12 +83,16 @@ export class ListeInvitesComponent {
       { nom: "Thierry", image: 'images/photos/thierry.jpg'},
       { nom: "Mickaël", image: 'images/photos/mickael.jpg'},
       { nom: "Henrique", image: 'images/photos/henrique.jpg'},
+      { nom: "Famille Chengsavang", image: 'images/photos/valentine.jpg'},
+      
       { nom: "Mme Misley",  image: 'images/icone_fille.png'},
       { nom: "Mme Talamona",  image: 'images/icone_fille.png'},
       { nom: "Anne-Laure",  image: 'images/icone_fille.png'},
       { nom: "Mme Oliva",  image: 'images/icone_fille.png'},
-      { nom: "Famille Chengsavang", image: 'images/photos/valentine.jpg'},      
-      { nom: "Youcef", image: 'images/icone_garcon.png'}
+      
+      { nom: "Youcef", image: 'images/icone_garcon.png'},
+      { nom: "Daisy", image: 'images/icone_fille.png'},
+      { nom: "Guillaume", image: 'images/photos/icone_garcon.png'}
     ]
 
     getInvites() {
