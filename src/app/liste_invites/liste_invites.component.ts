@@ -85,7 +85,7 @@ export class ListeInvitesComponent {
       { nom: "Thierry", image: 'images/photos/thierry.jpg'},
       { nom: "Mickaël", image: 'images/photos/mickael.jpg'},
       { nom: "Henrique", image: 'images/photos/henrique.jpg'},
-      { nom: "Mme Misley",  image: 'images/icone_fille.jpg'},
+      { nom: "Mme Misley",  image: 'images/icone_fille.png'},
       { nom: "Mme Talamona",  image: 'images/icone_fille.png'},
       { nom: "Anne-Laure",  image: 'images/icone_fille.png'},
       { nom: "Mme Oliva",  image: 'images/icone_fille.png'},
