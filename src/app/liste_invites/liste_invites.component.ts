@@ -38,7 +38,7 @@ export class ListeInvitesComponent {
       { nom: "Gina & Pierre", image: 'images/photos/gina.jpg'},
       { nom: "Benjamin, Adeline, Juliette & Roxane", image: 'images/photos/benj_adeline.jpg'},
       { nom: "Jenani & Thuraisamy", image: 'images/photos/jenani.jpg'},      
-      { nom: "Jean-Baptiste & Yedda", image: 'images/photos/jb_c.jpg'},      
+      { nom: "Yedda & Jean-Baptiste", image: 'images/photos/jb_c.jpg'},      
       { nom: "Benjamin, Stéphanie, Jean, Valentin & Roméo", image: 'images/photos/stephanie_benjamin.jpg'},
       { nom: "Rémi", image: 'images/photos/remi.jpg'},
       { nom: "Bertrand & Alexandra", image: 'images/photos/bertrand_alex.jpg'},
