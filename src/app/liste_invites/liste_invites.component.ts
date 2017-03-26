@@ -8,7 +8,7 @@ import { Component} from '@angular/core';
 export class ListeInvitesComponent {
     invites = [
       { nom: "So ngec & Ngi", image: 'images/photos/parents_lee.jpg'},
-      { nom: "Sylvie & Sophie", image: 'images/photos/sylvie_sophie.jpg'},
+      { nom: "Sophie & Sylvie", image: 'images/photos/sylvie_sophie.jpg'},
       { nom: "Jany", image: 'images/photos/jany.jpg'},
       { nom: "Viviane", image: 'images/photos/viviane.jpg'},
       { nom: "Magali", image: 'images/photos/magali.jpg'},
@@ -34,12 +34,12 @@ export class ListeInvitesComponent {
       { nom: "Aurore", image: 'images/photos/Aurore.png'},
       { nom: "Victor", image: 'images/photos/victor_c.jpg'},
       { nom: "Bastien", image: 'images/photos/bastien.jpg'},
-      { nom: "Karine & Bounkong", image: 'images/photos/boun_karine.jpg'},
+      { nom: "Bounkong & Karine", image: 'images/photos/boun_karine.jpg'},
       { nom: "Gina & Pierre", image: 'images/photos/gina.jpg'},
-      { nom: "Benjamin & Adeline", image: 'images/photos/benj_adeline.jpg'},
+      { nom: "Benjamin, Adeline, Juliette & Roxane", image: 'images/photos/benj_adeline.jpg'},
       { nom: "Jenani & Thuraisamy", image: 'images/photos/jenani.jpg'},      
       { nom: "Jean-Baptiste & Yedda", image: 'images/photos/jb_c.jpg'},      
-      { nom: "Famille Guérif", image: 'images/photos/stephanie_benjamin.jpg'},
+      { nom: "Benjamin, Stéphanie, Jean, Valentin & Roméo", image: 'images/photos/stephanie_benjamin.jpg'},
       { nom: "Rémi", image: 'images/photos/remi.jpg'},
       { nom: "Bertrand & Alexandra", image: 'images/photos/bertrand_alex.jpg'},
       
